@@ -1,0 +1,16 @@
+# Build artifacts
+bin/
+obj/
+
+# Rider project files
+.idea/
+
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.csproj.user
+
+# OS junk
+.DS_Store
