@@ -1,9 +1,9 @@
 ﻿using CSharpUnitTestKatas.Fundamentals;
 
-namespace CSharpUnitTestKatas.UnitTests;
+namespace CSharpUnitTestKatas.UnitTests.Fundamentals;
 
 [TestFixture]
-public class Tests
+public class ReservationTests
 {
     [Test]
     public void CanBeCancelledBy_AdminCancelling_ReturnsTrue()
