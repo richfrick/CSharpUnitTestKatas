@@ -62,4 +62,62 @@ public class BeginnerKataTests
             Assert.That(result, Is.EqualTo(areaOrPerimeter));
         }
     }
+
+    [TestFixture]
+    public class RemoveEveryOther()
+    {
+        [Test]
+        public void RemoveEveryOther_WhenPassedStringArray_RemovesEverySecondElement()
+        {
+            var input = new[] { "keep", "remove", "keep", "remove" };
+            var result = BeginnerKatas.RemoveEveryOtherRefactor(input);
+            Assert.That(result, Is.EqualTo(new []{"keep", "keep"}));
+        }
+        
+        [Test]
+        public void RemoveEveryOther_WhenPassedNestedArray_RemovesEverySecondElement()
+        {
+            var input = new object[] { new object[] { 1, 2 } };
+            var result = BeginnerKatas.RemoveEveryOtherRefactor(input);
+            Assert.That(result, Is.EqualTo(new object[] { new object[] { 1, 2 } }));
+        }
+        
+        [Test]
+        public void RemoveEveryOther_WhenPassedIntArray_RemovesEverySecondElement()
+        {
+            var input = new object[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            var result = BeginnerKatas.RemoveEveryOtherRefactor(input);
+            Assert.That(result, Is.EqualTo(new object[]{ 1, 3, 5, 7, 9 }));
+        }
+        
+        [Test]
+        public void RemoveEveryOther_WhenPassedNestedObjects_RemovesEverySecondElement()
+        {
+            var input = new object[] { new object[] { "Goodbye" }, new Dictionary<string,string>(){{"Great", "Job"}}};
+            var result = BeginnerKatas.RemoveEveryOtherRefactor(input);
+            Assert.That(result, Is.EqualTo(new object[] { new object[] { "Goodbye" } }));
+        }
+        
+        [Test]
+        public void RemoveEveryOther_WhenPassedEmptyArray_RemovesEverySecondElement()
+        {
+            var input = new object[] { };
+            var result = BeginnerKatas.RemoveEveryOtherRefactor(input);
+            Assert.That(result, Is.EqualTo(new object[] { }));
+        }
+    }
+
+    [TestFixture]
+    public class GetUnique
+    {
+        [Test]
+        [TestCase(new [] { 1,2,2,2 }, 1)]
+        [TestCase(new [] { -2,2,2,2 }, -2)]
+        [TestCase(new [] { 11,11,14,11,11 }, 14)]
+        public void GetUnique_WhenPassedList_ReturnsTheUniquesNumber(IEnumerable<int> ip, int res )
+        {
+            var result = BeginnerKatas.GetUniqueRefactor(ip);
+            Assert.That(result, Is.EqualTo(res));    
+        }
+    }
 }
