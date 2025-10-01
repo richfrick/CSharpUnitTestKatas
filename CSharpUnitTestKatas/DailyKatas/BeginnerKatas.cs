@@ -53,5 +53,15 @@ public class BeginnerKatas
     {
         return numbers.GroupBy(x => x).Single(x => x.Count() == 1).Key;
     }
+
+    public static string TimeStamp(int timeInSecs)
+    {
+        
+        int hours = timeInSecs / 3600;
+        int mins = (timeInSecs % 3600) / 60;
+        int secs = timeInSecs % 60;
+
+        return $"{hours:D2}:{mins:D2}:{secs:D2}";
+    }
     
 }

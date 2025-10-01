@@ -120,4 +120,25 @@ public class BeginnerKataTests
             Assert.That(result, Is.EqualTo(res));    
         }
     }
+
+    [TestFixture]
+    public class TimeStamp
+    {
+        [Test]
+        [TestCase(0, "00:00:00")]
+        [TestCase(59, "00:00:59")]
+        [TestCase(60, "00:01:00")]
+        [TestCase(90, "00:01:30")]
+        [TestCase(3599, "00:59:59")]
+        [TestCase(3600, "01:00:00")]
+        [TestCase(45296, "12:34:56")]
+        [TestCase(86399, "23:59:59")]
+        [TestCase(86400, "24:00:00")]
+        [TestCase(359999, "99:59:59")]
+        public void TimeStamp_WhenPassedTheTimeInMinutes_ReturnsHHMMSS(int timeInsecs, string time)
+        {
+            var result = BeginnerKatas.TimeStamp(timeInsecs);
+            Assert.That(result, Is.EqualTo(time));
+        }
+    }
 }
