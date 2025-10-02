@@ -28,4 +28,25 @@ public class MoveZerosTests
 
         Assert.That(result, Is.EqualTo(new int[]{}));
     }
+
+    [TestFixture]
+    public class ValidateHello()
+    {
+        [Test]
+        [TestCase("hiya, Hello", true)]
+        [TestCase("ciao bella!", true)]
+        [TestCase("salut", true)]
+        [TestCase("hallo salut", true)]
+        [TestCase("hombre!! hola", true)]
+        [TestCase("Hallo, wie geht's dir?", true)]
+        [TestCase("AHOJ!", true)]
+        [TestCase("czesc", true)]
+        [TestCase("Ahoj", true)]
+        [TestCase("mah", false)]
+        public void ValidateHello_PassValidGreeting_ReturnsLanguage(string greeting, bool isFound)
+        {
+            var result = BeginnerKatas.ValidateHelloRefactor(greeting);
+            Assert.That(result, Is.EqualTo(isFound));
+        }
+    }
 }
