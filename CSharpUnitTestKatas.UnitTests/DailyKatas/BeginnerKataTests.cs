@@ -148,4 +148,51 @@ public class BeginnerKataTests
             Assert.That(result, Is.EqualTo("99:59:59"));
         }
     }
+    
+    [TestFixture]
+    public class BetterThanAverage()
+    {
+        [Test]
+        public void BetterThanAverage_WhenYourScoreIsGreaterThanAverage_ReturnsTrue()
+        {
+            var result = BeginnerKatas.BetterThanAverage(new[]{1,2,3}, 5);
+            Assert.That(result, Is.True);
+        }
+        [Test]
+        public void BetterThanAverage_WhenYourScoreIsLessThanAverage_ReturnsFalse()
+        {
+            var result = BeginnerKatas.BetterThanAverage(new[]{1,2,3}, 1);
+            Assert.That(result, Is.False);
+        }
+    }
+    
+    [TestFixture]
+    public class Digitize
+    {
+        [Test]
+        [TestCase(35231, new long[]{1,3,2,5,3})]
+        [TestCase(0, new long[]{0})]
+        public void Digitize_test(long input, long[] output)
+        {
+            var result = BeginnerKatas.Digitizer(input);
+            Assert.That(result, Is.EqualTo(output));
+        }
+    }
+
+    [TestFixture]
+    public class Array
+    {
+        [Test]
+        [TestCase("", null)]
+        [TestCase("1", null)]
+        [TestCase("1,2", null)]
+        [TestCase("1, 3",null)]
+        [TestCase("1,2,3", "2")]
+        [TestCase("1,2,3, 4", "2 3")]
+        public void Array_ArrayWithMoreThan2CommaSeparatedChars_ReturnsNewString(string input, string? output)
+        {
+            var result = BeginnerKatas.Array(input);
+            Assert.That(result, Is.EqualTo(output));
+        }
+    }
 }

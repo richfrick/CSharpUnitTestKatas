@@ -71,7 +71,50 @@ public class BeginnerKatas
             Console.WriteLine(e);
             throw;
         }
- 
+    }
+    
+    public static bool BetterThanAverage(int[] classPoints, int yourPoints)
+    {
+        return yourPoints > classPoints.Aggregate(0, (sum, x) => sum + x) / classPoints.Length;
+    }
+    
+    public static bool ValidateHello(string greetings)
+    {
+        Dictionary<string, string> language = new()
+        {
+            {"Hello", "english" },
+            {"Ciao", "italian"},
+            {"Salut", "french"},
+            {"Hallo", "german"},
+            {"Hola", "spanish"},
+            {"Ahoj", "czech Republic"},
+            {"Czesc", "polish"}
+        };
+        
+        foreach (var key in language.Keys)
+        {
+            if (greetings.ToLower().Contains(key.ToLower()))
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+    public static bool ValidateHelloRefactor(string greetings)
+    {
+        var hellos = new string[] { "hello", "ciao", "salut", "hallo", "hola", "ahoj", "czesc"};
+        return hellos.Any(x => greetings.ToLower().Contains(x));
+    }
+    
+    public static long[] Digitizer(long n)
+    {
+        return n.ToString().Select(x => Convert.ToInt64(x - '0')).Reverse().ToArray();
+    }
+
+    public static string Array(string s)
+    {
+        var splitString = s.Split(',');
+        return splitString.Length > 2 ? string.Join(" ", splitString[1..^1]) : null;
     }
     
 }
