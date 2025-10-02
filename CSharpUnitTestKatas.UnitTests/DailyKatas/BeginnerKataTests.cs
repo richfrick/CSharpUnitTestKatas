@@ -140,5 +140,12 @@ public class BeginnerKataTests
             var result = BeginnerKatas.TimeStamp(timeInsecs);
             Assert.That(result, Is.EqualTo(time));
         }
+        
+        [Test]
+        public void TimeStamp_WhenPassedTheTimeGreaterThan35999_Uses359999asDefault()
+        {
+            var result = BeginnerKatas.TimeStamp(500000);
+            Assert.That(result, Is.EqualTo("99:59:59"));
+        }
     }
 }

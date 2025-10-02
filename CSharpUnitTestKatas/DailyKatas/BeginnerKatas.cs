@@ -56,12 +56,22 @@ public class BeginnerKatas
 
     public static string TimeStamp(int timeInSecs)
     {
-        
-        int hours = timeInSecs / 3600;
-        int mins = (timeInSecs % 3600) / 60;
-        int secs = timeInSecs % 60;
+        try
+        {
+            var time = timeInSecs;
+            if (timeInSecs > 359999) timeInSecs = 359999;
+            int hours = timeInSecs / 3600;
+            int mins = (timeInSecs % 3600) / 60;
+            int secs = timeInSecs % 60;
 
-        return $"{hours:D2}:{mins:D2}:{secs:D2}";
+            return $"{hours:D2}:{mins:D2}:{secs:D2}";
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw;
+        }
+ 
     }
     
 }
