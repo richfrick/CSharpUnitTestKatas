@@ -1,4 +1,4 @@
-namespace CSharpUnitTestKatas;
+namespace CSharpUnitTestKatas.DailyKatas.ArraysAndLists;
 
 public class LineNumbering
 {

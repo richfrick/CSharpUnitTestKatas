@@ -1,7 +1,15 @@
-namespace CSharpUnitTestKatas.DailyKatas;
+namespace CSharpUnitTestKatas.DailyKatas.ArraysAndLists;
 
 public class MoveZeros
 {
+    
+    //Using Linq
+    public static int[] MoveZerosSolutionRefactor(int[] arr)
+    {
+        return arr.OrderBy(x => x == 0).ToArray();
+    }
+    
+    // Using a loop
     public static int[] MoveZerosSolution(int[] arr)
     {
         var newArr = new List<int>();
@@ -22,8 +30,4 @@ public class MoveZeros
         return newArr.ToArray();
     }
     
-    public static int[] MoveZerosSolutionRefactor(int[] arr)
-    {
-        return arr.OrderBy(x => x == 0).ToArray();
-    }
 }

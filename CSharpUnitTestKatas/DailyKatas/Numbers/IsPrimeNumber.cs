@@ -1,14 +1,8 @@
-using System;
-
-namespace CSharpUnitTestKatas.DailyKatas;
+namespace CSharpUnitTestKatas.DailyKatas.Numbers;
 
 public class IsPrimeNumber
 {
-
-    public void test(string str)
-    {
-        str.Substring(0, str.IndexOf(","));
-    }
+    
     public static bool isPrimeNumberSolution(int num)
     {
         if(num % 2 == 0 || num > 1)

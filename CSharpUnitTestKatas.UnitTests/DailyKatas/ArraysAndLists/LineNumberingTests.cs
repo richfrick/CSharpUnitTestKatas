@@ -1,4 +1,6 @@
-namespace CSharpUnitTestKatas.UnitTests;
+using CSharpUnitTestKatas.DailyKatas.ArraysAndLists;
+
+namespace CSharpUnitTestKatas.UnitTests.DailyKatas.ArraysAndLists;
 
 [TestFixture]
 public class LineNumberingTests

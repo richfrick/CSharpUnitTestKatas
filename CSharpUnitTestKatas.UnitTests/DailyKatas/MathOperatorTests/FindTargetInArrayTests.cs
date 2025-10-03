@@ -1,4 +1,6 @@
-namespace CSharpUnitTestKatas.UnitTests;
+using CSharpUnitTestKatas.DailyKatas.MathOperator;
+
+namespace CSharpUnitTestKatas.UnitTests.DailyKatas.MathOperatorTests;
 
 [TestFixture]
 public class FindTargetInArrayTests
