@@ -1,4 +1,4 @@
-namespace CSharpUnitTestKatas;
+namespace CSharpUnitTestKatas.DailyKatas.MathOperator;
 
 public class FindTargetInArray
 {

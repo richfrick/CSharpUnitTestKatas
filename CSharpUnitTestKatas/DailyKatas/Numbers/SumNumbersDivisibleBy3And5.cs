@@ -1,4 +1,4 @@
-namespace CSharpUnitTestKatas;
+namespace CSharpUnitTestKatas.DailyKatas.Numbers;
 
 public class SumNumbersDivisibleBy3And5
 {

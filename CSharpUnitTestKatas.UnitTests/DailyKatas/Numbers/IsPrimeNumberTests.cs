@@ -1,6 +1,8 @@
 using CSharpUnitTestKatas.DailyKatas;
+using CSharpUnitTestKatas.DailyKatas.MathOperator;
+using CSharpUnitTestKatas.DailyKatas.Numbers;
 
-namespace CSharpUnitTestKatas.UnitTests.DailyKatas;
+namespace CSharpUnitTestKatas.UnitTests.DailyKatas.Numbers;
 
 [TestFixture]
 public class IsPrimeNumberTests

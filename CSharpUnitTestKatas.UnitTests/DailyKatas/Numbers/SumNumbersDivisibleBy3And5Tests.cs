@@ -1,4 +1,6 @@
-namespace CSharpUnitTestKatas.UnitTests;
+using CSharpUnitTestKatas.DailyKatas.Numbers;
+
+namespace CSharpUnitTestKatas.UnitTests.DailyKatas.Numbers;
 
 [TestFixture]
 public class SumNumbersDivisibleBy3And5Tests

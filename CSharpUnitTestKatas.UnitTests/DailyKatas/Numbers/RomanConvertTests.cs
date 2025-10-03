@@ -1,6 +1,6 @@
-using CSharpUnitTestKatas.DailyKatas;
+using CSharpUnitTestKatas.DailyKatas.Numbers;
 
-namespace CSharpUnitTestKatas.UnitTests.DailyKatas;
+namespace CSharpUnitTestKatas.UnitTests.DailyKatas.Numbers;
 
 [TestFixture]
 public class RomanConvertTests

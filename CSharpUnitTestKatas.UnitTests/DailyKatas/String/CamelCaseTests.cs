@@ -1,4 +1,4 @@
-namespace CSharpUnitTestKatas.UnitTests;
+namespace CSharpUnitTestKatas.UnitTests.DailyKatas.String;
 
 [TestFixture]
 public class CamelCaseTests

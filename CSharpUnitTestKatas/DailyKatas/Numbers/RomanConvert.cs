@@ -1,4 +1,4 @@
-namespace CSharpUnitTestKatas.DailyKatas;
+namespace CSharpUnitTestKatas.DailyKatas.Numbers;
 
 public class RomanConvert
 {
