@@ -19,4 +19,11 @@ public class StringManipulation
         return hellos.Any(x => greetings.ToLower().Contains(x));
     }
     
+    public static string BandNameGenerator(string str)
+    {
+        return str[0] == str[^1] 
+            ? $"{char.ToUpper(str[0])}{str[1..^1]}{str}" 
+            :  $"The {char.ToUpper(str[0])}{str[1..]}";
+        
+    }
 }

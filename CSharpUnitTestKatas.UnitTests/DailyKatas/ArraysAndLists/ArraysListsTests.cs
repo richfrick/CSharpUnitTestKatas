@@ -92,4 +92,17 @@ public class ArraysListsTests
             Assert.That(result, Is.EqualTo(output));
         }
     }
+
+    [TestFixture]
+    public class CountValues
+    {
+        [Test]
+        [TestCase(new bool[]{true, true, false }, 2)]
+        [TestCase(new bool[]{true, true, false }, 2)]
+        public void CountTrueValues_WithBoolArray_RetursnCountOfTrueValues(bool[] input, int output)
+        {
+            var result = ArraysLists.CountTrueValues(input);
+            Assert.That(result, Is.EqualTo(output));
+        }
+    }
 }
