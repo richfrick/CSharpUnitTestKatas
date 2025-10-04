@@ -55,4 +55,10 @@ public class ArraysLists
         return (splitString.Length > 2 ? string.Join(" ", splitString[1..^1]) : null);
     }
     
+    //returns the count of true values 
+    public static int CountTrueValues(bool[] boolValues)
+    {
+        return boolValues.Count(x => x);
+    }
+    
 }

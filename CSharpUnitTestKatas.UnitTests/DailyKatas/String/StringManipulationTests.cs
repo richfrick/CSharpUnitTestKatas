@@ -69,4 +69,17 @@ public class StringManipulationTests
             Assert.That(result, Is.EqualTo(isFound));
         }
     }
+
+    [TestFixture]
+    public class BandNameGenerator
+    {
+        [Test]
+        [TestCase("alaska", "Alaskalaska")]
+        [TestCase("darkness", "The Darkness")]
+        public void BandNameGenerator_WhenSuppliedName_ReturnsTheNewBandName(string noun, string bandName)
+        {
+            var result = StringManipulation.BandNameGenerator(noun);
+            Assert.That(result, Is.EqualTo(bandName));
+        }
+    }
 }
