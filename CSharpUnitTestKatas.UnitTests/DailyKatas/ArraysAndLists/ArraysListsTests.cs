@@ -105,4 +105,21 @@ public class ArraysListsTests
             Assert.That(result, Is.EqualTo(output));
         }
     }
+    
+    [TestFixture]
+    public class KillCount
+    {
+        [Test]
+        public void KillCount_WhenCalled_WillReturnArray()
+        {
+            Dictionary<string, int> counselors = new Dictionary<string, int>()
+            {
+                { "Mike", 3 },
+                { "Alysa", 7 },
+                { "Bob", 10 }
+            };
+            var result = ArraysLists.KillCount(counselors, 7);
+            Assert.That(result, Is.EqualTo(new string [] {"Alysa", "Bob"}));
+        }
+    }
 }
