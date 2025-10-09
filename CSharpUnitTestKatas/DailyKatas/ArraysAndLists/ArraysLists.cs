@@ -61,4 +61,9 @@ public class ArraysLists
         return boolValues.Count(x => x);
     }
     
+    //Return a list of keys that meet a value passed as an arg
+    public static string[] KillCount(Dictionary<string, int> counselors, int jason)
+    {
+        return counselors.Where(kvp => kvp.Value >= jason).Select(kvp => kvp.Key).ToArray();
+    }
 }
