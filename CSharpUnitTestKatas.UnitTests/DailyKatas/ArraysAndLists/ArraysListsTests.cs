@@ -122,4 +122,26 @@ public class ArraysListsTests
             Assert.That(result, Is.EqualTo(new string [] {"Alysa", "Bob"}));
         }
     }
+
+    [TestFixture]
+    public class Merge
+    {
+        [Test]
+        public void Merge_Scenario_1()
+        {
+            var arr1 = new[] { 1, 2, 3, 0, 0, 0 };
+            var arr2 = new[] { 2, 5, 6 };
+            ArraysLists.Merge(arr1, 3, arr2, 3);
+            Assert.That(arr1, Is.EqualTo(new [] { 1, 2, 2, 3, 5, 6 }));
+        }
+        
+        [Test]
+        public void Merge_Scenario_2()
+        {
+            var arr1 = new[] { 2, 0 };
+            var arr2 = new[] { 1 };
+            ArraysLists.Merge(arr1, 1, arr2, 1);
+            Assert.That(arr1, Is.EqualTo(new [] { 1, 2}));
+        }
+    }
 }

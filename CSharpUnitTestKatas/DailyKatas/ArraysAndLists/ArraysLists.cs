@@ -1,3 +1,5 @@
+using System.ComponentModel.Design;
+
 namespace CSharpUnitTestKatas.DailyKatas.ArraysAndLists;
 
 public class ArraysLists
@@ -58,12 +60,33 @@ public class ArraysLists
     //returns the count of true values 
     public static int CountTrueValues(bool[] boolValues)
     {
+        Console.WriteLine(boolValues.Count(x => x));
         return boolValues.Count(x => x);
+        
     }
     
     //Return a list of keys that meet a value passed as an arg
     public static string[] KillCount(Dictionary<string, int> counselors, int jason)
     {
         return counselors.Where(kvp => kvp.Value >= jason).Select(kvp => kvp.Key).ToArray();
+    }
+    
+    public static void Merge(int[] nums1, int m, int[] nums2, int n)
+    {
+        int i = m - 1;
+        int j = n - 1;
+        int k = m + n - 1;
+
+        while (j >= 0)
+        {
+            if (i >= 0 && nums1[i] > nums2[j])
+            {
+                nums1[k--] = nums1[i--];
+            }
+            else
+            {
+                nums1[k--] = nums2[j--];
+            }
+        }
     }
 }
