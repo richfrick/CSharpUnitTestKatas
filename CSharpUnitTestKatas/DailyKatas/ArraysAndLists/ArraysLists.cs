@@ -71,6 +71,7 @@ public class ArraysLists
         return counselors.Where(kvp => kvp.Value >= jason).Select(kvp => kvp.Key).ToArray();
     }
     
+    //merge 2 arrays together
     public static void Merge(int[] nums1, int m, int[] nums2, int n)
     {
         int i = m - 1;
@@ -88,5 +89,30 @@ public class ArraysLists
                 nums1[k--] = nums2[j--];
             }
         }
+    }
+    
+    //remove element val from array in-place and replace with 0 and return the
+    //number of elements that are not equal to val
+    public static int RemoveElement(int[] nums, int val)
+    {
+        var insertPos = 0;
+   
+        for (int i = 0; i < nums.Length; i++)
+        {
+            if (nums[i] != val)
+            {
+                nums[insertPos++] = nums[i];
+                Console.WriteLine(string.Join(", ", nums));
+            }
+        }
+
+        for (int i = insertPos; i < nums.Length; i++)
+        {
+                nums[i] = 0;
+                Console.WriteLine(string.Join(", ", nums));
+            
+        }
+        
+        return insertPos;
     }
 }
