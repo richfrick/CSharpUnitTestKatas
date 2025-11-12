@@ -144,4 +144,28 @@ public class ArraysListsTests
             Assert.That(arr1, Is.EqualTo(new [] { 1, 2}));
         }
     }
+
+    [TestFixture]
+    public class RemoveElement
+    {
+        [Test]
+        public void Remove_Element_Test_1()
+        {
+            int[] nums = { 3, 2, 2, 3 };
+
+            var result = ArraysLists.RemoveElement(nums, 3);
+            Assert.That(result, Is.EqualTo(2));
+            Assert.That(nums, Is.EqualTo(new[]{2,2,0,0}));
+        }
+        
+        [Test]
+        public void Remove_Element_Test_2()
+        {
+            int[] nums = { 0,1,2,2,3,0,4,2 };
+
+            var result = ArraysLists.RemoveElement(nums, 2);
+            Assert.That(result, Is.EqualTo(5));
+            Assert.That(nums, Is.EqualTo(new[]{0,1,3,0,4,0,0,0}));
+        }
+    }
 }
